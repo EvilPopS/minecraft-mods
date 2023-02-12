@@ -5,11 +5,12 @@ import com.evilpopsmods.abilities_grand_master_mod.custom_exceptions.DBManagerNo
 import com.evilpopsmods.abilities_grand_master_mod.services.implementations.DatabaseService;
 import com.evilpopsmods.abilities_grand_master_mod.services.interfaces.IDatabaseService;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 
-public class SetupEvents {
+public class DataEvents {
     private static final IDatabaseService databaseService = DatabaseService.getInstance();
 
     @SubscribeEvent
@@ -21,5 +22,10 @@ public class SetupEvents {
     public static void onPlayerJoined(PlayerEvent.PlayerLoggedInEvent event) throws DBManagerNotInitializedProperlyException {
         databaseService.setJoinedPlayerName(event.getEntity().getScoreboardName());
         databaseService.loadSkillDataset();
+    }
+
+    @SubscribeEvent
+    public static void onGameSaved(LevelEvent.Save event) {
+        databaseService.saveSkillDataset();
     }
 }

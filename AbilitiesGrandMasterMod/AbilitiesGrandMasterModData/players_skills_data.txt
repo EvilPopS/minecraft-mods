@@ -1,6 +1,6 @@
 [
   {
-    "worldName": "New World",
+    "worldName": "Neko ime",
     "playerName": "Dev",
     "allSkills": {
       "fightingSkill": {
@@ -56,7 +56,7 @@
     }
   },
   {
-    "worldName": "Neko ime",
+    "worldName": "New World",
     "playerName": "Dev",
     "allSkills": {
       "fightingSkill": {
