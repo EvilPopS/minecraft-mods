@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'abilities-grand-master-mod'
+rootProject.name = 'abilities_grand_master_mod'

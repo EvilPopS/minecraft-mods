@@ -1,0 +1,114 @@
+[
+  {
+    "worldName": "New World",
+    "playerName": "Dev",
+    "allSkills": {
+      "fightingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "archerySkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "fallingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "miningSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "diggingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "cuttingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "farmingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "fishingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "enchantingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "alchemySkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      }
+    }
+  },
+  {
+    "worldName": "Neko ime",
+    "playerName": "Dev",
+    "allSkills": {
+      "fightingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "archerySkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "fallingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "miningSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "diggingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "cuttingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "farmingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "fishingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "enchantingSkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      },
+      "alchemySkill": {
+        "level": 1,
+        "experience": 0.0,
+        "levelCap": 5.0
+      }
+    }
+  }
+]

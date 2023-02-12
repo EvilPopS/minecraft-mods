@@ -1,6 +1,6 @@
-package com.evilpopsmods.abilitiesgrandmastermod.models.skills.levels_consts;
+package com.evilpopsmods.abilities_grand_master_mod.models.skills.levels_consts;
 
-import com.evilpopsmods.abilitiesgrandmastermod.models.skills.SkillType;
+import com.evilpopsmods.abilities_grand_master_mod.models.skills.SkillType;
 
 public class SkillsLevelsManager {
     public static float getLevelCapBySkillType(final SkillType skillType, final int level) {
@@ -19,6 +19,6 @@ public class SkillsLevelsManager {
     }
 
     private static float getLevelCapFromArray(final float[] skillLevelCaps, int level) {
-        return skillLevelCaps[level-1];
+        return skillLevelCaps[level - 1];
     }
 }

@@ -1,20 +1,21 @@
-package com.evilpopsmods.abilitiesgrandmastermod.models.skills.skills_classes;
+package com.evilpopsmods.abilities_grand_master_mod.models.skills.skills_classes;
 
-import com.evilpopsmods.abilitiesgrandmastermod.models.skills.SkillType;
-import com.evilpopsmods.abilitiesgrandmastermod.models.skills.levels_consts.SkillsLevelsManager;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class SkillBase {
     protected int level;
     protected float experience;
     protected float levelCap;
 
-    protected abstract void setNextLevelCap();
-
-    public SkillBase(final int level, final float experience, final float levelCap) {
-        this.level = level;
-        this.experience = experience;
-        this.levelCap = levelCap;
-    }
+    protected abstract void setLevelForSkill();
 
     public void increaseExperience(final float exp) {
         this.experience += exp;
@@ -23,6 +24,7 @@ public abstract class SkillBase {
             setExperienceAfterLevelUp();
         }
     }
+
     private boolean canLevelUp() {
         return this.experience > levelCap;
     }
