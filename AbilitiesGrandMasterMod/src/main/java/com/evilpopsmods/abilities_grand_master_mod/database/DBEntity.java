@@ -12,7 +12,7 @@ public class DBEntity {
     private String playerName;
     private AllSkills allSkills;
 
-    public DBEntity(String worldName, String playerName) {
+    private DBEntity(String worldName, String playerName) {
         this.worldName = worldName;
         this.playerName = playerName;
         this.allSkills = AllSkills.getInitializedInstance();

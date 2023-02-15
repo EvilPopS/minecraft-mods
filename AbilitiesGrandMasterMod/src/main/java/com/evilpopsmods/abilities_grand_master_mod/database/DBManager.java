@@ -4,6 +4,7 @@ package com.evilpopsmods.abilities_grand_master_mod.database;
 import com.evilpopsmods.abilities_grand_master_mod.configurations.Settings;
 import com.evilpopsmods.abilities_grand_master_mod.custom_exceptions.DBManagerNotInitializedProperlyException;
 import com.evilpopsmods.abilities_grand_master_mod.custom_exceptions.DataSavingUnsuccessfulException;
+import com.evilpopsmods.abilities_grand_master_mod.models.skills.AllSkills;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBManager {
+public class DBManager implements IDBManager {
     private static DBManager singletonInstance = null;
     private DBEntity dataEntity;
     @Setter
@@ -31,13 +32,19 @@ public class DBManager {
 
     public void loadPlayerData() throws DBManagerNotInitializedProperlyException {
         validateDBManagerInitialization();
-        if (getDBEntityByPlayerAndWorldName() == null)
+        this.dataEntity = getDBEntityByPlayerAndWorldName();
+        if (this.dataEntity == null)
             this.dataEntity = DBEntity.getInitializedInstance(this.currentWorldName, this.currentPlayerName);
     }
 
-    public void savePlayerData() throws DBManagerNotInitializedProperlyException, DataSavingUnsuccessfulException {
+    public void savePlayerData(final AllSkills updatedAllSkills) throws DBManagerNotInitializedProperlyException, DataSavingUnsuccessfulException {
         validateDBManagerInitialization();
+        this.dataEntity.setAllSkills(updatedAllSkills);
         saveDataToFile();
+    }
+
+    public AllSkills getAllSkills() {
+        return this.dataEntity == null ? null : this.dataEntity.getAllSkills();
     }
 
     private void saveDataToFile() throws DataSavingUnsuccessfulException {
