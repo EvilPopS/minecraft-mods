@@ -20,7 +20,12 @@ public class FightingSkillService implements IFightingSkillService {
     }
 
     @Override
-    public void increaseExperience() {
+    public void increaseExperienceOnHit() {
+        skillsManager.increaseExperience(SkillType.FIGHTING, 0.2f);
+    }
+
+    @Override
+    public void increaseExperienceOnKill() {
         skillsManager.increaseExperience(SkillType.FIGHTING, 1);
     }
 
