@@ -1,13 +1,13 @@
 [
   {
-    "worldName": "New World",
+    "worldName": "Neko ime",
     "playerName": "Dev",
     "allSkills": {
       "fightingSkill": {
-        "damageMultiplier": 0.12,
-        "level": 4,
-        "experience": 1.5999955,
-        "levelCap": 8.0
+        "damageMultiplier": 0.03,
+        "level": 1,
+        "experience": 0.74000007,
+        "levelCap": 5.0
       },
       "archerySkill": {
         "level": 1,

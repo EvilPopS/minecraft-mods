@@ -15,13 +15,13 @@ public class FightingSkillEvents {
     public static void onEntityHurt(LivingHurtEvent event) {
         if (event.getSource().getMsgId().equals(EventsConstants.PLAYER_MSG_ID)) {
             event.setAmount(event.getAmount()*fightingSkillService.getAttackDamageMultiplier());
-            fightingSkillService.increaseExperienceOnHit();
+            fightingSkillService.increaseExperienceOnHit(event.getEntity().getType().getCategory());
         }
     }
 
     @SubscribeEvent
     public static void onEntityKill(LivingDeathEvent event) {
         if (event.getSource().getMsgId().equals(EventsConstants.PLAYER_MSG_ID))
-            fightingSkillService.increaseExperienceOnKill();
+            fightingSkillService.increaseExperienceOnKill(event.getEntity().getType().getCategory());
     }
 }
