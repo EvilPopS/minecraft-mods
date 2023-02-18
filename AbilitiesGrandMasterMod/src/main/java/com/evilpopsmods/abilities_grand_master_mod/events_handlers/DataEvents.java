@@ -11,7 +11,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 
 public class DataEvents {
-    private static final IDatabaseService databaseService = DatabaseService.getInstance();
+    private static final IDatabaseService databaseService = DatabaseService.getSingletonInstance();
 
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {

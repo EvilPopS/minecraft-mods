@@ -1,6 +1,7 @@
 package com.evilpopsmods.abilities_grand_master_mod.models.skills.skills_classes;
 
 
+import com.evilpopsmods.abilities_grand_master_mod.models.skills.SkillType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,18 +16,42 @@ public abstract class SkillBase {
     protected float experience;
     protected float levelCap;
 
-    protected abstract void setLevelForSkill();
+    protected abstract float getLevelCapForSkill(final SkillType skillType, final int level);
+    protected abstract void setLevelCapForSkill();
+    protected abstract void doOnLevelUpForTheRestOfTheSkill();
+    protected abstract boolean isLevelOutOfBounds();
+    protected abstract boolean isMaxLevel();
+    protected abstract void resetTheRestOfTheSkill();
+
 
     public void increaseExperience(final float exp) {
-        this.experience += exp;
-        if (canLevelUp()) {
-            this.level += 1;
-            setExperienceAfterLevelUp();
+        if (isLevelOutOfBounds()) {
+            if (!isMaxLevel())
+                resetSkillAsLevelIsOutOfBounds();
+            return;
         }
+
+        this.experience += exp;
+        if (canLevelUp())
+            doOnLevelUp();
+    }
+
+    private void resetSkillAsLevelIsOutOfBounds() {
+        this.level = 1;
+        this.experience = 0;
+        setLevelCapForSkill();
+        resetTheRestOfTheSkill();
+    }
+
+    private void doOnLevelUp() {
+        this.level += 1;
+        setExperienceAfterLevelUp();
+        setLevelCapForSkill();
+        doOnLevelUpForTheRestOfTheSkill();
     }
 
     private boolean canLevelUp() {
-        return this.experience > levelCap;
+        return this.experience >= levelCap;
     }
 
     private void setExperienceAfterLevelUp() {
